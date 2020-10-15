@@ -1,0 +1,160 @@
+<div class="container">
+    <h3>Pruebas de funciones de Arrays -map()-</h3>
+
+    <form (ngSubmit)="onPruebaMap()">
+        <label for="inputPruebaArray">Prueba map() - Mete un número:</label>
+        <input type="number" id="inputPruebaArray" name="inputPruebaArray" [(ngModel)]="inputPruebaArray">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Dato introducido: {{inputPruebaArray}}</p>
+    <p>Resultado: {{resultadoPrueba}}</p>
+
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -map()- objetos</h3>
+
+    <form name="demoMap2">
+        <div *ngFor='let opcion of opcionesPrueba2'>
+            <input type="radio" name="platos" value="{{opcion}}" (change)="onPruebaMap2($event)"><i>{{opcion}}</i>
+        </div>
+
+    </form>
+    <p>Dato introducido: {{seleccionadoPruba2}}</p>
+    <p>Resultado: {{resultadoPrueba2}}</p>
+    <hr class="mb-0">
+
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -filter()-</h3>
+
+    <form (ngSubmit)="onPruebaFilter(pruebaFiltrarInput)">
+        <label for="pruebaFiltrar">Prueba filter():</label>
+        <input type="text" id="pruebaFiltrar" name="pruebaFiltrar" [(ngModel)]="pruebaFiltrarInput">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Dato introducido: {{pruebaFiltrarInput}}</p>
+    <p>Resultado: {{resultadoPrueba3}}</p>
+
+
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -filter() + map()-</h3>
+
+    <form (ngSubmit)="onPruebaFilterMap(pruebaFiltrarMapInput)">
+        <label for="pruebaFiltrarMap">Prueba filter():</label>
+        <input type="text" id="pruebaFiltrarMap" name="pruebaFiltrarMap" [(ngModel)]="pruebaFiltrarMapInput">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Heroe: {{pruebaFiltrarMapInput}}</p>
+    <p>Su nombre real es: {{resultadoPruebaFilterMap}}</p>
+
+    <hr class="mb-0">
+
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -find()-</h3>
+
+    <form (ngSubmit)="onPruebaFind(pruebaFindInput)">
+        <label for="pruebaFiltrarMap">
+            Prueba filter():
+        </label>
+        <input type="text" id="pruebaFind" name="pruebaFind" [(ngModel)]="pruebaFindInput">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Nombre real: {{pruebaFindInput}}</p>
+    <p>Nombre de héroe: {{resultadoPruebaFind}}</p>
+    <hr class="mb-0">
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -forEach()-</h3>
+
+    <form (ngSubmit)="onPruebaforEach(pruebaforEachInput)">
+        <label for="pruebaforEach">
+            Prueba filter():
+        </label>
+        <input type="text" id="pruebaforEach" name="pruebaforEach" [(ngModel)]="pruebaforEachInput">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Tipo de heroe: {{pruebaforEachInput}}</p>
+    <p>Hay {{cont}} heroes de ese tipo.</p>
+
+    <form (ngSubmit)="onPruebaforEach2(pruebaforEachInput)">
+        <label for="pruebaforEach">
+            Prueba filter():
+        </label>
+        <input type="text" id="pruebaforEach2" name="pruebaforEach2" [(ngModel)]="pruebaforEachInput">
+
+        <button class="btn primary btn-outline btn-lg" type="submit" value="Submit">Submit</button>
+
+    </form>
+    <p>Los héroes del tipo {{pruebaforEachInput}} son:</p>
+    <p>{{listaHeroes}}</p>
+    <hr class="mb-0">
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -flat()-</h3>
+    <p>El array es: [1, 2, [3, 4, [5, 6]]]</p>
+    <form>
+        <div *ngFor='let opcionFlat of opcionesFlat'>
+            <input type="radio" name="flat" value="{{opcionFlat}}" (change)="onPruebaFlat($event)"><i>{{opcionFlat}}</i>
+        </div>
+    </form>
+    <hr class="mb-0">
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -sort()-</h3>
+    <p>El array es: [1, 10, 2, 21, 105, 78, 932]</p>
+    <button class="btn primary btn-outline btn-lg" type="submit" value="Submit" (click)="onPruebaSort1()">Sin
+        prametros</button>
+    <button class="btn primary btn-outline btn-lg" type="submit" value="Submit" (click)="onPruebaSort2()">Con
+        prametros (As)</button>
+    <button class="btn primary btn-outline btn-lg" type="submit" value="Submit" (click)="onPruebaSort3()">Con
+        prametros (Des)</button>
+    <p>El resutado del metodo sort() es: {{resultadoSort}}</p>
+    <hr class="mb-0">
+
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Arrays -reverse()-</h3>
+    <p>El array es: [1,2,3,4,5,6]</p>
+    <button class="btn primary btn-outline btn-lg" type="submit" value="Submit" (click)="onPruebaReverse()">REVERSE!</button>
+    <p>El array original: {{arrayPruebaReverse}}</p>
+    <p>El array nuevo: {{arrayPruebaReverseRes}}</p>
+    <hr class="mb-0">
+   
+    <!------------------------------------------------------------>
+    <h3>Pruebas de funciones de Date</h3>
+    <ul>
+        <li>La variable original: {{patata}}</li>
+        <li>Usando el pipe Date: {{patata | date}}</li>
+        <li>Usando el pipe Date (Formato 'medium'): {{patata | date:'medium'}}</li>
+        <li>Usando el pipe Date (Formato 'short'): {{patata | date:'short'}}</li>
+        <li>Usando el pipe Date (Formato 'shortDate'): {{patata | date:'shortDate'}}</li>
+        <li>Usando el pipe Date (Formato 'mediumTime'): {{patata | date:'mediumTime'}}</li>
+        <li>Usando el pipe Date (Formato personalizado 'MMMM-dd'): {{patata | date:'MMMM-dd'}}</li>
+    </ul>
+    <p>Semuestran por consola:</p>
+    <button (click)="pruebaFecha()">Cambiar el date original</button>
+    <br>
+    <button (click)="pruebaComparar()">Comparar fechas</button>
+    <h3>Convertir un String a Date</h3>
+    <form action="">
+        <label for="dia">Dia</label>
+        <input type="number" min="1" max="31"
+        id="dia" name="dia" [(ngModel)]="diaInput"><br>
+        <label for="Mes">Mes</label>
+        <input type="number" min="1" max="12"
+        id="Mes" name="Mes" [(ngModel)]="MesInput"><br>
+        <label for="annio">Año</label>
+        <input type="number" min="1900" max="2300"
+        id="annio" name="annio" [(ngModel)]="annioInput"><br>
+        <button (click)="convertirStringADate()">Convertir fecha</button>
+
+        <p>El plazo es:</p>
+        <p> {{fechaInicioComparacion| date}} y {{fechaFinComparacion| date}}</p>
+        <button (click)="onEstarEnfecha()">Comprobar si está dentro de plazo</button>
+    </form>
+
+</div>
